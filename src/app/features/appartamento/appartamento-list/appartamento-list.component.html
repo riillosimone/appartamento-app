@@ -1,0 +1,55 @@
+<main class="flex-shrink-0">
+
+    <div class="container">
+
+
+
+
+        <div class='card'>
+            <div class='card-header'>
+                <h5>Lista dei risultati</h5>
+            </div>
+            <div class='card-body'>
+                <a class="btn btn-primary" routerLink='/appartamento/insert'>Add New</a>
+
+                <div class='table-responsive'>
+                    <table class='table table-hover '>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Descrizione</th>
+                                <th>Metri Quadrati</th>
+                                <th>Data Costruzione</th>
+                                <th>Disponibile da subito</th>
+                                <th>Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let appartamentoItem of listaAppartamenti">
+                            <tr>
+                                <td>{{appartamentoItem.id}}</td>
+                                <td>{{appartamentoItem.descrizione}}</td>
+                                <td>{{appartamentoItem.metriQuadrati}}</td>
+                                <td>{{appartamentoItem.dataCostruzione | date:'dd/MM/yyyy' }}</td>
+                                <td>{{appartamentoItem.disponibileDaSubito?'SI':'NO'}}</td>
+                                <td>
+                                    <a class="btn  btn-sm btn-outline-secondary"
+                                        [routerLink]="['/appartamento/show',appartamentoItem.id]">Visualizza</a>
+                                    <a class="btn  btn-sm btn-outline-danger"
+                                        [routerLink]="['/appartamento/delete',appartamentoItem.id]">Delete</a>
+                                    <a class="btn  btn-sm btn-outline-primary"
+                                        [routerLink]="['/appartamento/edit',appartamentoItem.id]">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+        </div>
+
+
+        <!-- end container -->
+    </div>
+</main>

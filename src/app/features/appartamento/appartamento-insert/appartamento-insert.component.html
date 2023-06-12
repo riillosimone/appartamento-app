@@ -1,0 +1,64 @@
+<!-- 
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+        <div class="container">
+
+            <div class='card'>
+                <div class='card-header'>
+                    <h5>Inserisci elemento</h5>
+                </div>
+                <div class='card-body' *ngIf="appartamentoInsert" >
+
+
+                    <div class="col-md-6">
+                        <label for="descrizione" class="form-label">Descrizione</label> <input [(ngModel)]="appartamentoInsert.descrizione"
+                            type="text" name="descrizione" id="nickname" class="form-control" placeholder="Inserire la descrizione">
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label for="dataCostruzione" class="form-label">Data Costruzione</label> <input class="form-control" id="dataCostruzione" type="date"
+                            [(ngModel)]="appartamentoInsert.dataCostruzione" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa"
+                            name="dataCostruzione">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="metriQuadrati" class="form-label">Metri quadrati
+                        </label> <input type="number" class="form-control" name="metriQuadrati"
+                            [(ngModel)]="appartamentoInsert.metriQuadrati" id="metriQuadrati" placeholder="Inserire metri quadrati">
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <label for="attivo" class="form-label">Disponibile da subito</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="disponibileDaSubito" id="siRadio" [value]="true" [(ngModel)]="appartamentoInsert.disponibileDaSubito">
+                            <label class="form-check-label" for="siRadio">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="attivo" id="noRadio" [value]="false" [(ngModel)]="appartamentoInsert.disponibileDaSubito">
+                            <label class="form-check-label" for="noRadio">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button
+                    class='btn btn-outline-secondary' style='width: 80px' (click)="onBack()"> <i
+                    class='fa fa-chevron-left'></i> Back
+                </button>
+                        <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"
+                            (click)="onPremiConferma()">Conferma</button>
+                    </div>
+
+                    <!-- end card-body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <!-- end container -->
+        </div>
+        <!-- end main -->
+    </main>
